@@ -9,6 +9,7 @@
     --color-hero-button: #188CE8;
     --color-section-members: #F5F4FA;
     --color-icon:#AFB1B8;
+    --cubic:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Утилиты */
@@ -262,6 +263,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     background: var(--primary-white-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -374,6 +376,9 @@ body {
 .apps{
     position: absolute;
     width: 100%;
+    bottom: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
     
     font-weight: 700;
     line-height: 1.14;
@@ -548,6 +553,9 @@ body {
     background: var(--color-section-members);
     border-radius: 4px;
     cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portf-link:hover, .portf-link:focus{
@@ -591,6 +599,37 @@ body {
 .text-pad{
    padding: 20px 24px;
 }
+
+
+/* ----------- */
+.portf-top-wrap{
+    position: relative;
+    overflow: hidden;
+}
+
+.portf-top-text{
+    position: absolute;
+    top: 0;
+    padding: 63px 24px;
+    height: 100%;  
+    transform: translateY(100%);
+    transition: transform 250ms var(--cubic);
+    overflow: auto;
+
+    display: block;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+
+    color: var(--primary-white-color);
+    background: rgba(33, 150, 243, 0.9);
+
+}
+
+.portf-cards:hover .portf-top-text{
+    transform: translateY(0);
+}
+/* ----------- */
 
 /* ------------- */
 .section-members-list{
@@ -645,6 +684,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .client-icon{
     fill: var(--color-icon);

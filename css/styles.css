@@ -243,8 +243,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
     
-    transform: opacity 250ms var(--cubic), 
-    visibility 250ms var(--cubic);
+    transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
 }
 
 .backdrop.is-hidden{
@@ -691,7 +690,6 @@ body {
 
     color: var(--primary-white-color);
     background: rgba(33, 150, 243, 0.9);
-
 }
 
 /* ----------- */
